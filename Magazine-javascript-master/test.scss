@@ -1,0 +1,122 @@
+$secondary_color : #70af85;
+$primary_color : #c6ebc9;
+$background : #f0e2d0;
+$border : 5px solid $secondary_color;
+
+body{
+  background-color: $background;
+  font-family: sans-serif;
+}
+
+header{
+  background-color: $primary_color;
+  font-size: 17px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: $border;
+}
+
+img {
+  width: 200px;
+}
+
+#all{
+  margin-top: 100px;
+  display: flex;
+}
+
+#list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  text-align: center;
+}
+
+#details{
+  flex-grow: 1;
+}
+
+#java{
+  right: 0px;
+  background-color: $primary_color;
+  top: 100px;
+  width: 200px;
+  border: $border;
+  border-radius: 10px;
+  height: 600px;
+  position: -webkit-sticky;
+  position: sticky;
+  font-size: 20px;
+}
+
+.food{
+  margin: 30px;
+  background-color: $primary_color;
+  border: $border;
+  border-radius: 10px;
+}
+
+.name{
+  font-size: 20px;
+}
+
+%button{
+  border: $border;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  background-color: $primary_color;
+}
+
+.favourite{
+  @extend %button;
+}
+
+.recipe{
+  @extend %button;
+}
+
+%button_hover{
+  background-color: $secondary_color;
+  color: $primary_color;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+
+.favourite:hover{
+  @extend %button_hover
+}
+
+.recipe:hover{
+  @extend %button_hover
+
+}
+
+.yellow{
+  border-color: yellow;
+}
+
+@media screen and (max-width: 550px) {
+  #all{
+    display: inline-block;
+  }
+
+  .food{
+    margin: 10px;
+  }
+
+  #java{
+    position: static;
+    height: fit-content;
+    width: 450px;
+    display: flex;
+    right: revert;
+  }
+
+  #list{
+    margin-right: 0;
+  }
+}
+
